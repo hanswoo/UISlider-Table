@@ -26,7 +26,7 @@ UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = "RE"
         let cell = mtv.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-        let tableValue = String(Int(msl.value))
+        let tableValue = String(Int(msl.value)+(indexPath.row))
         cell.textLabel?.text = tableValue
         return cell
 }
@@ -35,7 +35,5 @@ UITableViewDelegate{
         print("slider value = \(Int(msl.value * 100))")
         mtv.reloadData();
     }
-    
-
 }
 
